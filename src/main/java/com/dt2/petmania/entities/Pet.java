@@ -1,10 +1,16 @@
 package com.dt2.petmania.entities;
 
+import com.dt2.petmania.entities.enums.Porte;
+import com.dt2.petmania.entities.enums.Sexo;
+import jakarta.persistence.*;
 
-@Table("tb_pet")
+
+@Entity
 public class Pet {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
     private String nome;
     private String especie;
     private String raca;
@@ -15,7 +21,7 @@ public class Pet {
     private String foto;
     private boolean disponivel;
 
-    public Pet(String nome, String especie, String raca, int idade, Sexo sexo, Porte porte, String personalidade, String foto, ballena disponivel) {
+    public Pet(String nome, String especie, String raca, int idade, Sexo sexo, Porte porte, String personalidade, String foto, boolean disponivel) {
         this.nome = nome;
         this.especie = especie;
         this.raca = raca;
@@ -27,7 +33,9 @@ public class Pet {
         this.disponivel = disponivel;
     }
 
-    public void setNome(int nome) {
+    public Pet(){}
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -75,7 +83,7 @@ public class Pet {
         return raca;
     }
 
-    public String getIdade() {
+    public int getIdade() {
         return idade;
     }
 
@@ -95,7 +103,11 @@ public class Pet {
         return foto;
     }
 
-    public ballena isDisponivel() {
+    public boolean isDisponivel() {
         return disponivel;
+    }
+
+    public int getId() {
+        return id;
     }
 }
