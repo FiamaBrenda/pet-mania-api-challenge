@@ -1,21 +1,39 @@
 package com.dt2.petmania.entities;
 
+import com.dt2.petmania.entities.enums.Porte;
+import com.dt2.petmania.entities.enums.Sexo;
+import jakarta.persistence.*;
 
-@Table("tb_pet")
+@Entity
+@Table(name = "tb_pet")
 public class Pet {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer id;
     private String nome;
     private String especie;
     private String raca;
-    private int idade;
+    private Integer idade;
     private Sexo sexo;
     private Porte porte;
     private String personalidade;
     private String foto;
-    private boolean disponivel;
+    private Boolean disponivel;
 
-    public Pet(String nome, String especie, String raca, int idade, Sexo sexo, Porte porte, String personalidade, String foto, ballena disponivel) {
+    public Pet() {
+    }
+
+    public Pet(Integer id,
+               String nome,
+               String especie,
+               String raca,
+               Integer idade,
+               Sexo sexo,
+               Porte porte,
+               String personalidade,
+               String foto,
+               Boolean disponivel) {
+        this.id = id;
         this.nome = nome;
         this.especie = especie;
         this.raca = raca;
@@ -27,7 +45,15 @@ public class Pet {
         this.disponivel = disponivel;
     }
 
-    public void setNome(int nome) {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
@@ -39,7 +65,7 @@ public class Pet {
         this.raca = raca;
     }
 
-    public void setIdade(int idade) {
+    public void setIdade(Integer idade) {
         this.idade = idade;
     }
 
@@ -59,7 +85,7 @@ public class Pet {
         this.foto = foto;
     }
 
-    public void setDisponivel(boolean disponivel) {
+    public void setDisponivel(Boolean disponivel) {
         this.disponivel = disponivel;
     }
 
@@ -75,7 +101,7 @@ public class Pet {
         return raca;
     }
 
-    public String getIdade() {
+    public Integer getIdade() {
         return idade;
     }
 
@@ -95,7 +121,7 @@ public class Pet {
         return foto;
     }
 
-    public ballena isDisponivel() {
+    public Boolean isDisponivel() {
         return disponivel;
     }
 }
