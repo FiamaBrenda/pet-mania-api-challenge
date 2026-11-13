@@ -1,4 +1,4 @@
-package com.dt2.petmania;
+package com.seducD2.petmania;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

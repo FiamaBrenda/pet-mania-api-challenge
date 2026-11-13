@@ -1,4 +1,4 @@
-package com.dt2.petmania;
+package com.seducD2.petmania;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
